@@ -1,9 +1,9 @@
 import Mount from "./mount";
 
-function Xyz() {
+function MyApp() {
   return(
     <Mount />
   )
 }
 
-export default Xyz;
+export default MyApp;
