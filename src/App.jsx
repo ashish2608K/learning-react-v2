@@ -1,18 +1,18 @@
 import Mount from "./mount";
+import { useState } from "react";
+
 
 function MyApp() {
 
-  let counter = 0;
+  const [counter, setCounter] = useState(0);
 
   const addvalue = () => {
-    counter = counter + 1;
-    console.log("clicked", Math.random()); 
+    setCounter(counter + 1);
   }
 
   return (
     <div>
       <Mount />
-
       <h2>Trek Counter: {counter}</h2>
       <button onClick={addvalue}>How many treks have you done
       </button>
