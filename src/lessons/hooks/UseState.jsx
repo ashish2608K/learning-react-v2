@@ -2,7 +2,6 @@ import { useState } from "react";
 import styles from "./Hooks.module.css";
 
 function Hooks() {
-  // useState remembers the counter value between renders.
   const [count, setCount] = useState(0);
 
   return (

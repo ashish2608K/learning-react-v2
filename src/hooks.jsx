@@ -7,6 +7,8 @@ function Hooks() {
 
   const addvalue = () => {
     setCounter(counter + 1);
+    console.log("clicked", Math.random());
+    
   }
 
   return (

@@ -2,10 +2,8 @@ import { useState } from "react";
 import { lessons } from "./lessons";
 
 function App() {
-  // Start with the first lesson selected.
   const [activeLessonId, setActiveLessonId] = useState(lessons[0].id);
 
-  // Find the selected lesson and get its component.
   const activeLesson = lessons.find((lesson) => lesson.id === activeLessonId);
   const ActiveLesson = activeLesson.component;
 
