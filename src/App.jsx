@@ -1,9 +1,9 @@
-import Hooks  from "./lessons/hooks/UseState";
+import TrekBtn  from "./TrekCard";
 
 function App() {
   return (
     <div>
-      <Hooks  />
+      <TrekBtn  />
     </div>
   );
 }
