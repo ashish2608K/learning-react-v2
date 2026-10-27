@@ -1,18 +1,24 @@
 import { useState } from "react";
-import styles from "./Hooks.module.css";
+
 
 function Hooks() {
-  const [count, setCount] = useState(0);
+
+  const [counter, setCounter] = useState(0);
+
+  const addvalue = () => {
+    setCounter(counter + 1);
+    console.log("clicked", Math.random());
+    
+  }
 
   return (
-    <section className={styles.box}>
-      <h1>Hello World</h1>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount((currentCount) => currentCount + 1)} type="button">
-        +1
+    <div className="trekCounter">
+      <h2 className="heading">Trek Counter: {counter}</h2>
+      <button className="counter-btn" onClick={addvalue}>How many treks have you done
       </button>
-    </section>
-  );
+
+    </div>
+  )
 }
 
-export default Hooks;
+export default Hooks;  
