@@ -12,12 +12,10 @@ function TrekBtn() {
             <div className="trek-card">
               <div className="img_wrap">
                 <img className="trek_img" src="/images/card-img-two.jpg" alt="Trek" />
-
-                <button type="button"  className={`like-btn ${liked ? "liked" : ""}`} onClick={() => setLiked(!liked)} >
+                <button type="button" className={`like-btn ${liked && "liked"}`} onClick={()=> setLiked(!liked)} >
                   <img src="/images/icons/heart.png" alt="" />
                 </button>
               </div>
-
               <div className="content-area">
                 <h2 className="heading">Annapurna</h2>
                 <div className="cnt-wrap">
