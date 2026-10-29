@@ -10,9 +10,9 @@ function TrekBtn() {
         <div className="row">
           <div className="col-12 col-xl-4">
             <div className="trek-card">
-              <div className="img_wrap">
+              <div className="img_wrap">  
                 <img className="trek_img" src="/images/card-img-two.jpg" alt="Trek" />
-                <button type="button" className={`like-btn ${liked && "liked"}`} onClick={()=> setLiked(!liked)} >
+                <button type="button" className={`like-btn ${liked && "liked"}`} onClick={() => setLiked(!liked)} >
                   <img src="/images/icons/heart.png" alt="" />
                 </button>
               </div>
