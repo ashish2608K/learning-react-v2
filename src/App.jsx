@@ -1,10 +1,13 @@
-import TrekBtn  from "./TrekCard";
+import TrekGrid from "./Trekgrid";
+import Hero from "./components/banner";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div>
-      <h2 className="bg-green-400 font-bold text-black">I love you komal</h2>
-      <TrekBtn  />
+      <Navbar />
+      <Hero />
+     <TrekGrid />
     </div>
   );
 }

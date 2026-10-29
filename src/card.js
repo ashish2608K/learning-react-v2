@@ -1,0 +1,38 @@
+export const treks = [
+  {
+    id: 1,
+    image: "/images/card-img-one.jpg",
+    name: "Hampta Pass",
+    route: "Manali → Chandratal",
+    rating: 4.7,
+    level: "Moderate",
+    distance: 26,
+  },
+  {
+    id: 2,
+    image: "/images/card-img-two.jpg",
+    name: "Rupin Pass",
+    route: "Dhaula → Sangla",
+    rating: 4.8,
+    level: "Hard",
+    distance: 52,
+  },
+  {
+    id: 3,
+    image: "/images/card-img-three.jpg",    
+    name: "Dayara Bugyal",
+    route: "Barsu → Dayara Meadows → Barsu",
+    rating: 4.6,
+    level: "Easy",
+    distance: 21,
+  },
+  {
+    id: 4,
+    image: "/images/card-img-four.jpg",
+    name: "Kedarkantha",
+    route: "Sankri → Summit → Sankri",
+    rating: 4.9,
+    level: "Moderate",
+    distance: 20,
+  },
+];

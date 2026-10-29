@@ -1,3 +1,4 @@
 @import "tailwindcss";
 @import "./custom-style.css";
 @import "./TrekCard.css";
+@import url("./navbar.css");
