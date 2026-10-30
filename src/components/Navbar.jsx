@@ -1,5 +1,6 @@
 import { useState } from "react";
-import LogoIcon from "../../public/images/icons/trek.png";
+import "../css/navbar.css";
+import LogoIcon from "../images/icons/trek.png";
 
 const leftLinks = ["Home", "Treks", "Destinations"];
 const rightLinks = ["Blog", "About", "Search"];

@@ -1,4 +1,4 @@
-import BannerImg from "/images/banner/banner_img.jpg";
+import BannerImg from "../images/banner/banner_img.jpg";
 
 function Hero() {
     return (

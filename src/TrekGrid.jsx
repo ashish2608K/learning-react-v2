@@ -16,7 +16,7 @@ function TrekGrid() {
                 level={trek.level}
                 distance={trek.distance}
               />
-            </div>  
+            </div>
           ))}
         </div>
       </div>

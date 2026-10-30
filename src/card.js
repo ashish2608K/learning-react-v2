@@ -1,7 +1,7 @@
 export const treks = [
   {
     id: 1,
-    image: "/images/card-img-one.jpg",
+    image: "./images/card-img-one.jpg",
     name: "Hampta Pass",
     route: "Manali → Chandratal",
     rating: 4.7,
@@ -10,7 +10,7 @@ export const treks = [
   },
   {
     id: 2,
-    image: "/images/card-img-two.jpg",
+    image: "./images/card-img-two.jpg",
     name: "Rupin Pass",
     route: "Dhaula → Sangla",
     rating: 4.8,
@@ -19,7 +19,7 @@ export const treks = [
   },
   {
     id: 3,
-    image: "/images/card-img-three.jpg",    
+    image: "./images/card-img-three.jpg",    
     name: "Dayara Bugyal",
     route: "Barsu → Dayara Meadows → Barsu",
     rating: 4.6,
@@ -28,7 +28,7 @@ export const treks = [
   },
   {
     id: 4,
-    image: "/images/card-img-four.jpg",
+    image: "./images/card-img-four.jpg",
     name: "Kedarkantha",
     route: "Sankri → Summit → Sankri",
     rating: 4.9,
