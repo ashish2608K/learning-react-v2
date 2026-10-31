@@ -1,5 +1,5 @@
 import TrekCard from "./TrekCard";
-import { treks } from "./card";
+import { treks } from "./card-data";
 
 function TrekGrid() {
   return (

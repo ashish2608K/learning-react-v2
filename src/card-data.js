@@ -1,7 +1,13 @@
+import imgOne from "./images/card-img-one.jpg";
+import imgTwo from "./images/card-img-two.jpg";
+import imgThree from "./images/card-img-three.jpg";
+import imgFour from "./images/card-img-four.jpg";
+
+
 export const treks = [
   {
     id: 1,
-    image: "./images/card-img-one.jpg",
+    image: imgOne,
     name: "Hampta Pass",
     route: "Manali → Chandratal",
     rating: 4.7,
@@ -10,7 +16,7 @@ export const treks = [
   },
   {
     id: 2,
-    image: "./images/card-img-two.jpg",
+    image: imgTwo,
     name: "Rupin Pass",
     route: "Dhaula → Sangla",
     rating: 4.8,
@@ -19,7 +25,7 @@ export const treks = [
   },
   {
     id: 3,
-    image: "./images/card-img-three.jpg",    
+    image: imgThree,    
     name: "Dayara Bugyal",
     route: "Barsu → Dayara Meadows → Barsu",
     rating: 4.6,
@@ -28,7 +34,7 @@ export const treks = [
   },
   {
     id: 4,
-    image: "./images/card-img-four.jpg",
+    image: imgFour,
     name: "Kedarkantha",
     route: "Sankri → Summit → Sankri",
     rating: 4.9,

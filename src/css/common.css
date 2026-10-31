@@ -1,3 +1,84 @@
 @import "tailwindcss";
 @import "./custom-style.css";
 @import "./TrekCard.css";
+@import url("navbar.css");
+@import url("index.css");
+
+
+.home_banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.home_banner .banner_wrapper {
+    position: relative;
+    width: 100%;
+    height: 84vh;
+    min-height: 520px;
+}
+
+/* the photo fills the whole box */
+.home_banner .img_wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.home_banner .img_wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* dark layer so the text is readable */
+.home_banner .img_wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* sits on top of the image and centers its content */
+.home_banner .banner_inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.25rem;
+}
+
+.home_banner .content_area {
+    max-width: 800px;
+    text-align: center;
+}
+
+.home_banner .heading {
+    color: #ffe600;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.home_banner .mont_btn {
+    margin-top: 1.5rem;
+}
+
+.home_banner .banner_btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.home_banner .banner_btn:hover {
+    background: #fff;
+    color: #000;
+}

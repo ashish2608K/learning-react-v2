@@ -1,4 +1,5 @@
 import BannerImg from "../images/banner/banner_img.jpg";
+import "../css/index.css";
 
 function Hero() {
     return (
