@@ -1,4 +1,3 @@
-
 .home_banner {
     width: 100%;
     margin: 0;
@@ -77,3 +76,374 @@
     background: #fff;
     color: #000;
 }
+
+
+.home_banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.home_banner .banner_wrapper {
+    position: relative;
+    width: 100%;
+    height: 84vh;
+    min-height: 520px;
+}
+
+/* the photo fills the whole box */
+.home_banner .img_wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.home_banner .img_wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* dark layer so the text is readable */
+.home_banner .img_wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* sits on top of the image and centers its content */
+.home_banner .banner_inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.25rem;
+}
+
+.home_banner .content_area {
+    max-width: 800px;
+    text-align: center;
+}
+
+.home_banner .heading {
+    color: #ffe600;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.home_banner .mont_btn {
+    margin-top: 1.5rem;
+}
+
+.home_banner .banner_btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.home_banner .banner_btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* NAVBAR */
+
+.site_navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 4vw;
+    background: transparent;
+}
+
+.site_navbar .navbar_group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site_navbar .navbar_right {
+    justify-content: flex-end;
+}
+
+.site_navbar .navbar_link {
+    padding: 6px 14px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.site_navbar .navbar_link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.site_navbar .navbar_link.active {
+    background: #fff;
+    color: #1b5e20;
+}
+
+.site_navbar .navbar_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.site_navbar .navbar_logo img {
+    width: 36px;
+    height: 36px;
+    filter: brightness(0) invert(1); /* makes the icon white */
+}
+
+
+.icon_group a.nav-user {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.nav-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.nav-avatar--initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1c1c1c;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.nav_cart_btn {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 9px;
+    background: #1c1c1c;
+    color: #fff;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.primary-text-color {
+    color: var(--primary-text-color);
+}
+
+.primary-bg {
+    background-color: var(--primary-bg);
+}
+
+.buy_now_btn {
+    display: block;
+    background: #171717;
+    color: #fff;
+    text-align: center;
+    padding: 10px min(max(1.5625rem, 0.7813vw), 0.9375rem);
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.view_all_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    background: #171717;
+    padding: min(max(0.5625rem, 0.7292vw), 0.875rem) min(max(1.5625rem, 1.5625vw), 1.875rem);
+    border-radius: 999px;
+    transition: background 0.2s ease;
+}
+
+.view_all_button .view_all_text {
+    color: #fff;
+    font-size: min(max(0.9375rem, 1.25vw), 1.25rem);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.view_all_button:hover {
+    background: #2f2f2f;
+}
+/* NAVBAR END */
+
+
+/* Find your next trail START */
+.like_btn_card {
+    padding: 80px 0;
+}
+
+.like_btn_card .trek-card {
+    width: 100%;
+    height: 540px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 36px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+.like_btn_card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #000;
+}
+
+.like_btn_card .trek_img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.like_btn_card .blur-layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 62%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 55%);
+    mask-image: linear-gradient(to bottom, transparent, #000 55%);
+    pointer-events: none;
+}
+
+.like_btn_card .like-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    z-index: 2;
+}
+
+.like_btn_card .like-btn:hover {
+    transform: scale(1.08);
+}
+
+.like_btn_card .like-btn img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);   /* white heart */
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.like_btn_card .like-btn.liked img {
+    filter: none;                      /* original heart colour */
+    transform: scale(1.25);
+}
+
+.like_btn_card .content-area {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+}
+
+.like_btn_card .heading {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.like_btn_card .route {
+    margin: 6px 0 16px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.like_btn_card .meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.like_btn_card .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.like_btn_card .meta-item img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);   /* white icons */
+}
+
+.like_btn_card .view-btn {
+    width: 100%;
+    padding: 16px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(to bottom, #fff, #eee);
+    color: #111;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.like_btn_card .view-btn:hover {
+    transform: translateY(-2px);
+}
+/* Find your next trail END */

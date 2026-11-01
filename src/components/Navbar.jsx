@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../css/navbar.css";
+import "../css/index.css";
 import LogoIcon from "../images/icons/trek.png";
 
 const leftLinks = ["Home", "Treks", "Destinations"];
