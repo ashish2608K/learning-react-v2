@@ -23,7 +23,7 @@ function Navbar() {
     );
 
     return (
-        <nav className="navbar">
+        <nav className="site_navbar">
             <div className="navbar_group navbar_left">
                 {leftLinks.map(renderLink)}
             </div>

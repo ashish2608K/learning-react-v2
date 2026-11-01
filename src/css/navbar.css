@@ -1,5 +1,5 @@
 
-.navbar {
+.site_navbar {
     position: absolute;
     top: 0;
     left: 0;
@@ -12,17 +12,17 @@
     background: transparent;
 }
 
-.navbar .navbar_group {
+.site_navbar .navbar_group {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.navbar .navbar_right {
+.site_navbar .navbar_right {
     justify-content: flex-end;
 }
 
-.navbar .navbar_link {
+.site_navbar .navbar_link {
     padding: 6px 14px;
     border-radius: 6px;
     color: #fff;
@@ -31,16 +31,16 @@
     text-transform: uppercase;
 }
 
-.navbar .navbar_link:hover {
+.site_navbar .navbar_link:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
-.navbar .navbar_link.active {
+.site_navbar .navbar_link.active {
     background: #fff;
     color: #1b5e20;
 }
 
-.navbar .navbar_logo {
+.site_navbar .navbar_logo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +50,7 @@
     font-weight: 600;
 }
 
-.navbar .navbar_logo img {
+.site_navbar .navbar_logo img {
     width: 36px;
     height: 36px;
     filter: brightness(0) invert(1); /* makes the icon white */

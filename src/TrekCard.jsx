@@ -1,4 +1,7 @@
 import { useState } from "react";
+import heartImg from "./images/icons/heart.png";
+import starImg from "./images/icons/star.png";
+import trekImg from "./images/icons/trek.png";
 
 function TrekCard({
   image,
@@ -17,12 +20,11 @@ function TrekCard({
         <button
           type="button"
           className={`like-btn ${liked ? "liked" : ""}`}
-          onClick={() => setLiked(!liked)}
-        >
-          <img src="/images/icons/heart.png" alt="" />
+          onClick={() => setLiked(!liked)}>
+          <img src={heartImg} alt="" />
         </button>
       </div>
-      
+
       <div className="content-area">
         <h2 className="heading">{name}</h2>
         <div className="cnt-wrap">
@@ -30,10 +32,10 @@ function TrekCard({
         </div>
         <div className="pills">
           <span className="pill">
-            <img src="/images/icons/star.png" alt="" /> {rating}
+            <img src={starImg} alt="" /> {rating}
           </span>
           <span className="pill">
-            <img src="/images/icons/trek.png" alt="" /> {level} {distance} km
+            <img src={trekImg} alt="" /> {level} {distance} km
           </span>
         </div>
       </div>

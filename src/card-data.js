@@ -41,4 +41,14 @@ export const treks = [
     level: "Moderate",
     distance: 20,
   },
+
+  {
+    id: 4,
+    image: imgFour,
+    name: "Kedarkantha",
+    route: "Sankri → Summit → Sankri",
+    rating: 4.9,
+    level: "Moderate",
+    distance: 20,
+  },
 ];

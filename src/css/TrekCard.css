@@ -1,13 +1,23 @@
+.like_btn_card .trek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.like_btn_card {
+    padding: 120px 0px;
+}
+
 .like_btn_card .trek-card {
     position: relative;
     width: 100%;
-    max-width: 344px;
+    /* max-width: 250px;   */
     height: 460px;
     border-radius: 28px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     background: #000;
-    margin-top: 40px;
+    /* no margin-top here anymore */
 }
 
 /* photo fills the card */
