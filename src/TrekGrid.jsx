@@ -28,6 +28,19 @@ function TrekGrid() {
   return (
     <div className="like_btn_card">
       <div className="custom-container">
+        {/* HEADER */}
+        <div className="flex flex-col w-[550px] my-[20px]">
+          <div className="!text-[17px] text-[#2F6B3A] font-medium">Popular treks</div>
+          <h2 className="!text-[48px] !font-bold !text-[#111111] ">
+            Find your next
+            <span className="text-[#2F6B3A]"> trail</span>
+          </h2>
+          <p className="font-normal text-[#5C5C5C] !text-[21px] ">Hand-picked Himalayan routes, from easy meadow walks to
+            high-altitude passes. Pick your difficulty, check the distance, and start
+            planning.</p>
+        </div>
+
+        {/* CARDS */}
         <div className="trek_card_swiper swiper">
           <div className="swiper-wrapper">
             {treks.map((trek) => (

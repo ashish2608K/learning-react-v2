@@ -4,6 +4,7 @@ import imgThree from "./images/card-img-three.jpg";
 import imgFour from "./images/card-img-four.jpg";
 
 
+
 export const treks = [
   {
     id: 1,
@@ -23,6 +24,15 @@ export const treks = [
     level: "Hard",
     distance: 52,
   },
+    {
+    id: 5,
+    image: "./src/images/card-img-five.jpg",
+    name: "Brahmatal ",
+    route: "Sankri → Summit → Sankri",
+    rating: 4.9,
+    level: "Moderate",
+    distance: 20,
+  },
   {
     id: 3,
     image: imgThree,    
@@ -32,16 +42,6 @@ export const treks = [
     level: "Easy",
     distance: 21,
   },
-  {
-    id: 4,
-    image: imgFour,
-    name: "Kedarkantha",
-    route: "Sankri → Summit → Sankri",
-    rating: 4.9,
-    level: "Moderate",
-    distance: 20,
-  },
-
   {
     id: 4,
     image: imgFour,

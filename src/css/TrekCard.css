@@ -1,52 +1,70 @@
-.like_btn_card .trek-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
-}
-
 .like_btn_card {
-    padding: 120px 0px;
+    padding: 80px 0;
 }
 
+/* outer white frame */
 .like_btn_card .trek-card {
+    width: 100%;
+    height: 540px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 36px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+/* inner photo area */
+.like_btn_card .card-inner {
     position: relative;
     width: 100%;
-    /* max-width: 250px;   */
-    height: 460px;
+    height: 100%;
     border-radius: 28px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     background: #000;
-    /* no margin-top here anymore */
-}
-
-/* photo fills the card */
-.like_btn_card .img_wrap {
-    position: absolute;
-    inset: 0;
 }
 
 .like_btn_card .trek_img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-/* heart button, top-left */
+/* progressive blur + dark fade at the bottom */
+.like_btn_card .blur-layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 62%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 55%);
+    mask-image: linear-gradient(to bottom, transparent, #000 55%);
+    pointer-events: none;
+}
+
+/* glass heart button, top-right */
 .like_btn_card .like-btn {
     position: absolute;
     top: 16px;
-    left: 16px;
-    width: 48px;
-    height: 48px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: transform 0.2s ease;
+    z-index: 2;
 }
 
 .like_btn_card .like-btn:hover {
@@ -54,59 +72,74 @@
 }
 
 .like_btn_card .like-btn img {
-    width: 22px;
-    height: 22px;
-    filter: grayscale(1) opacity(0.6);
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);   /* white heart */
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* styled and ready: the look when your logic adds the "liked" class */
 .like_btn_card .like-btn.liked img {
-    filter: none;
+    filter: none;                      /* original heart colour */
     transform: scale(1.25);
 }
 
-/* white info panel */
+/* text + button over the image */
 .like_btn_card .content-area {
     position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    padding: 16px;
-    background: #fff;
-    border-radius: 22px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
 }
 
 .like_btn_card .heading {
     margin: 0;
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 700;
-    color: #111;
+    color: #fff;
 }
 
-.like_btn_card .cnt-wrap p {
-    margin: 4px 0 12px;
-    font-size: 14px;
-    color: #777;
+.like_btn_card .route {
+    margin: 6px 0 16px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.65);
 }
 
-.like_btn_card .pills {
+.like_btn_card .meta {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 16px;
 }
 
-.like_btn_card .pill {
+.like_btn_card .meta-item {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: #f3f3f3;
-    border-radius: 999px;
-    font-size: 14px;
-    color: #333;
+    gap: 8px;
 }
 
-.like_btn_card .pill img {
-    width: 16px;
-    height: 16px;
+.like_btn_card .meta-item img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);   /* white icons */
+}
+
+.like_btn_card .view-btn {
+    width: 100%;
+    padding: 16px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(to bottom, #fff, #eee);
+    color: #111;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.like_btn_card .view-btn:hover {
+    transform: translateY(-2px);
 }

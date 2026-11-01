@@ -64,6 +64,14 @@ body {
     font-weight: 600;
 }
 
+
+@media (min-width: 1200px) {
+    .custom-container {
+        padding-left: 8.75rem;
+        padding-right: 8.75rem;
+    }
+}
+
 /* Common Headings end */
 
 
