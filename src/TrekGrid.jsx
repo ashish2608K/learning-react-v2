@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -10,22 +10,40 @@ import TrekCard from "./TrekCard";
 import { treks } from "./card-data";
 
 function TrekGrid() {
+  const [query, setQuery] = useState("");
+  const swiperRef = useRef(null); 
+
+  const searchBar = useMemo(() => {
+    const cleanQuery = query.toLowerCase().trim(); 
+    return treks.filter(
+      (komal) =>
+        komal.name.toLowerCase().includes(cleanQuery) ||
+        komal.route.toLowerCase().includes(cleanQuery) 
+    );
+  }, [query]); 
+
   useEffect(() => {
-    const trekSwiper = new Swiper(".trek_card_swiper", {
+    swiperRef.current = new Swiper(".trek_card_swiper", {
       modules: [Navigation, Pagination],
       slidesPerView: 1,
       spaceBetween: 10,
-      loop: true,
+      loop: false,
       breakpoints: {
         768: { slidesPerView: 2 },
         1200: { slidesPerView: 4 },
       },
     });
 
-    return () => trekSwiper.destroy(true, true);
+    return () => {
+      if (swiperRef.current) swiperRef.current.destroy(true, true);
+    };
   }, []);
 
-  const searchBar = [query , setQuery] = useState("")
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.update();
+    }
+  }, [searchBar]);
 
   return (
     <section className="popular-treks_section">
@@ -39,9 +57,11 @@ function TrekGrid() {
               Find your next
               <span className="text-[#2F6B3A]"> trail</span>
             </h2>
-            <p className="font-normal text-[#5C5C5C] text-[20px] ">Hand-picked Himalayan routes, from easy meadow walks to
+            <p className="font-normal text-[#5C5C5C] text-[20px] ">
+              Hand-picked Himalayan routes, from easy meadow walks to
               high-altitude passes. Pick your difficulty, check the distance, and start
-              planning.</p>
+              planning.
+            </p>
           </div>
 
           <form className="trek_search absolute top-[114px] right-0" role="search" onSubmit={(e) => e.preventDefault()}>
@@ -54,8 +74,8 @@ function TrekGrid() {
               type="search"
               placeholder="Search treks"
               aria-label="Search treks"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
             />
           </form>
 
@@ -64,8 +84,8 @@ function TrekGrid() {
         {/* CARDS */}
         <div className="trek_card_swiper swiper">
           <div className="swiper-wrapper">
-            {treks.map((trek) => (
-              <div className="swiper-slide" key={trek.id}>
+            {searchBar.map((trek) => (
+              <div className="swiper-slide" key={trek.id} >
                 <TrekCard
                   image={trek.image}
                   name={trek.name}
@@ -77,7 +97,14 @@ function TrekGrid() {
               </div>
             ))}
           </div>
+
+          {searchBar.length === 0 && (
+            <div className="w-full text-center py-10 text-[18px] text-gray-500">
+              No trails found matching your search.
+            </div>
+          )}
         </div>
+
         <div className="mt-[40px] flex justify-center items-center text-center">
           <a
             href="#"

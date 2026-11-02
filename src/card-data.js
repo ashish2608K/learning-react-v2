@@ -9,7 +9,7 @@ export const treks = [
   {
     id: 1,
     image: imgOne,
-    name: "Hampta Pass",
+    name: "Hampta pass",
     route: "Manali → Chandratal",
     rating: 4.7,
     level: "Moderate",
