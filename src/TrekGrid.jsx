@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -25,19 +25,40 @@ function TrekGrid() {
     return () => trekSwiper.destroy(true, true);
   }, []);
 
+  const searchBar = [query , setQuery] = useState("")
+
   return (
-    <div className="like_btn_card">
+    <section className="popular-treks_section">
       <div className="custom-container">
+
         {/* HEADER */}
-        <div className="flex flex-col w-[550px] my-[20px]">
-          <div className="!text-[17px] text-[#2F6B3A] font-medium">Popular treks</div>
-          <h2 className="!text-[48px] !font-bold !text-[#111111] ">
-            Find your next
-            <span className="text-[#2F6B3A]"> trail</span>
-          </h2>
-          <p className="font-normal text-[#5C5C5C] !text-[21px] ">Hand-picked Himalayan routes, from easy meadow walks to
-            high-altitude passes. Pick your difficulty, check the distance, and start
-            planning.</p>
+        <div className="flex justify-between relative">
+          <div className="flex flex-col w-[550px] my-[20px]">
+            <div className="text-[17px] text-[#2F6B3A] font-medium">Popular treks</div>
+            <h2 className="text-[48px] font-bold text-[#111111] ">
+              Find your next
+              <span className="text-[#2F6B3A]"> trail</span>
+            </h2>
+            <p className="font-normal text-[#5C5C5C] text-[20px] ">Hand-picked Himalayan routes, from easy meadow walks to
+              high-altitude passes. Pick your difficulty, check the distance, and start
+              planning.</p>
+          </div>
+
+          <form className="trek_search absolute top-[114px] right-0" role="search" onSubmit={(e) => e.preventDefault()}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M21 21l-4.3-4.3" />
+            </svg>
+            <input
+              type="search"
+              placeholder="Search treks"
+              aria-label="Search treks"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            />
+          </form>
+
         </div>
 
         {/* CARDS */}
@@ -57,14 +78,16 @@ function TrekGrid() {
             ))}
           </div>
         </div>
-
-        <div className="trek_controls">
-          <button type="button" className="trek_prev">Prev</button>
-          <div className="trek_pagination"></div>
-          <button type="button" className="trek_next">Next</button>
+        <div className="mt-[40px] flex justify-center items-center text-center">
+          <a
+            href="#"
+            className="inline-flex items-center justify-center gap-[10px] h-[52px] px-[32px] border-[1.5px] border-[#111111] rounded-full text-[16px] font-semibold text-[#111111] no-underline transition-colors duration-200 hover:bg-[#111111] hover:text-white"
+          >
+            View all treks <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

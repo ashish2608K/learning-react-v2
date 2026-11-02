@@ -306,21 +306,21 @@
 
 
 /* Find your next trail START */
-.like_btn_card {
+.popular-treks_section {
     padding: 80px 0;
 }
 
-.like_btn_card .trek-card {
+.popular-treks_section .trek-card {
     width: 100%;
     height: 540px;
     padding: 10px;
-    background: #fff;
+    /* background: #fff; */
     border-radius: 36px;
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
+    /* box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12); */
+    /* box-sizing: border-box; */
 }
 
-.like_btn_card .card-inner {
+.popular-treks_section .card-inner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -329,7 +329,7 @@
     background: #000;
 }
 
-.like_btn_card .trek_img {
+.popular-treks_section .trek_img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -338,7 +338,7 @@
     display: block;
 }
 
-.like_btn_card .blur-layer {
+.popular-treks_section .blur-layer {
     position: absolute;
     left: 0;
     right: 0;
@@ -352,7 +352,7 @@
     pointer-events: none;
 }
 
-.like_btn_card .like-btn {
+.popular-treks_section .like-btn {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -371,23 +371,23 @@
     z-index: 2;
 }
 
-.like_btn_card .like-btn:hover {
+.popular-treks_section .like-btn:hover {
     transform: scale(1.08);
 }
 
-.like_btn_card .like-btn img {
+.popular-treks_section .like-btn img {
     width: 20px;
     height: 20px;
     filter: brightness(0) invert(1);   /* white heart */
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.like_btn_card .like-btn.liked img {
+.popular-treks_section .like-btn.liked img {
     filter: none;                      /* original heart colour */
     transform: scale(1.25);
 }
 
-.like_btn_card .content-area {
+.popular-treks_section .content-area {
     position: absolute;
     left: 20px;
     right: 20px;
@@ -395,20 +395,20 @@
     z-index: 1;
 }
 
-.like_btn_card .heading {
+.popular-treks_section .heading {
     margin: 0;
     font-size: 30px;
     font-weight: 700;
     color: #fff;
 }
 
-.like_btn_card .route {
+.popular-treks_section .route {
     margin: 6px 0 16px;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.65);
 }
 
-.like_btn_card .meta {
+.popular-treks_section .meta {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -418,19 +418,19 @@
     font-size: 16px;
 }
 
-.like_btn_card .meta-item {
+.popular-treks_section .meta-item {
     display: inline-flex;
     align-items: center;
     gap: 8px;
 }
 
-.like_btn_card .meta-item img {
+.popular-treks_section .meta-item img {
     width: 18px;
     height: 18px;
     filter: brightness(0) invert(1);   /* white icons */
 }
 
-.like_btn_card .view-btn {
+.popular-treks_section .view-btn {
     width: 100%;
     padding: 16px;
     border: 0;
@@ -443,7 +443,57 @@
     transition: transform 0.2s ease;
 }
 
-.like_btn_card .view-btn:hover {
+.popular-treks_section .view-btn:hover {
     transform: translateY(-2px);
+}
+
+
+.popular-treks_section .trek_head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 44px;
+}
+
+.popular-treks_section .trek_search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 320px;
+    max-width: 100%;
+    height: 52px;
+    padding: 0 20px;
+    background: #fff;
+    border: 1.5px solid #d6d1c4;
+    border-radius: 999px;
+    color: #111;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popular-treks_section .trek_search:focus-within {
+    border-color: #2f6b3a;
+    box-shadow: 0 0 0 4px rgba(47, 107, 58, 0.15);
+}
+
+.popular-treks_section .trek_search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 16px;
+    color: #111;
+}
+
+.popular-treks_section .trek_search input::placeholder {
+    color: #8a8a8a;
+}
+
+.popular-treks_section .trek_empty {
+    text-align: center;
+    color: #666;
+    padding: 40px 0;
 }
 /* Find your next trail END */
