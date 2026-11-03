@@ -1,23 +1,19 @@
 import { useEffect, useMemo, useState, useRef } from "react";
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
-
 import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-
 import TrekCard from "./TrekCard";
 import { treks } from "./card-data";
 
 function TrekGrid() {
-  const [query, setQuery] = useState("");
+
   const swiperRef = useRef(null);
+  const [query, setQuery] = useState("")
 
   const searchBar = useMemo(() => {
     const cleanQuery = query.toLowerCase().trim();
-    const fiterresult = treks.filter((komal) => komal.name.toLowerCase().includes(cleanQuery) ||
-      komal.route.toLowerCase().includes(cleanQuery))
-    return fiterresult;
+    return treks.filter((komal) => komal.name.toLowerCase().includes(cleanQuery) ||
+      komal.route.toLowerCase().includes(cleanQuery));
   }, [query]);
 
   useEffect(() => {
