@@ -14,6 +14,7 @@ export const treks = [
     rating: 4.7,
     level: "Moderate",
     distance: 26,
+    
   },
   {
     id: 2,

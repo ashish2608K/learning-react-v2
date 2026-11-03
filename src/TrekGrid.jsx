@@ -11,16 +11,14 @@ import { treks } from "./card-data";
 
 function TrekGrid() {
   const [query, setQuery] = useState("");
-  const swiperRef = useRef(null); 
+  const swiperRef = useRef(null);
 
   const searchBar = useMemo(() => {
-    const cleanQuery = query.toLowerCase().trim(); 
-    return treks.filter(
-      (komal) =>
-        komal.name.toLowerCase().includes(cleanQuery) ||
-        komal.route.toLowerCase().includes(cleanQuery) 
-    );
-  }, [query]); 
+    const cleanQuery = query.toLowerCase().trim();
+    const fiterresult = treks.filter((komal) => komal.name.toLowerCase().includes(cleanQuery) ||
+      komal.route.toLowerCase().includes(cleanQuery))
+    return fiterresult;
+  }, [query]);
 
   useEffect(() => {
     swiperRef.current = new Swiper(".trek_card_swiper", {
