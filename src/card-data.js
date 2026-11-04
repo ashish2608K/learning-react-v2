@@ -3,8 +3,6 @@ import imgTwo from "./images/card-img-two.jpg";
 import imgThree from "./images/card-img-three.jpg";
 import imgFour from "./images/card-img-four.jpg";
 
-
-
 export const treks = [
   {
     id: 1,
