@@ -11,18 +11,18 @@ const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    root: process.env.ROOT,
-})
+    database: process.env.DB_NAME
+});
 
-app.get("api/treks", async (req, res) => {
+app.get("/api/treks", async (req, res) => {
     try {
-        const [rows] = await db.query("SELECT * FROM TREKS")
-        res.json[rows]
+        const [rows] = await db.query("SELECT * FROM treks")
+        res.json(rows)
     }
     catch (err) {
         console.error(err)
-        res.status(5000).json ({message : "DATABASE MAI ERROR HAI "})
+        res.status(500).json({ message: "Database error " })
     }
 });
 
-app.listen(5000 , () => console.log("API https://localhost:5000"))
+app.listen(5000, () => console.log("API http://localhost:5000"))
