@@ -3,18 +3,40 @@ import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import TrekCard from "./TrekCard";
-import { treks } from "./card-data";
+
+const API = "http://localhost:5000";
 
 function TrekGrid() {
-
   const swiperRef = useRef(null);
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("");
+  const [treks, setTreks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function getTreks() {
+      try {
+        const res = await fetch(`${API}/api/treks`);
+        if (!res.ok) throw new Error("Server error " + res.status);
+        const data = await res.json();
+        setTreks(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getTreks();
+  }, []);
 
   const searchBar = useMemo(() => {
     const cleanQuery = query.toLowerCase().trim();
-    return treks.filter((komal) => komal.name.toLowerCase().includes(cleanQuery) ||
-      komal.route.toLowerCase().includes(cleanQuery));
-  }, [query]);
+    return treks.filter(
+      (trek) =>
+        trek.name.toLowerCase().includes(cleanQuery) ||
+        trek.route.toLowerCase().includes(cleanQuery)
+    );
+  }, [query, treks]);
 
   useEffect(() => {
     swiperRef.current = new Swiper(".trek_card_swiper", {
@@ -27,16 +49,13 @@ function TrekGrid() {
         1200: { slidesPerView: 4 },
       },
     });
-
     return () => {
       if (swiperRef.current) swiperRef.current.destroy(true, true);
     };
   }, []);
 
   useEffect(() => {
-    if (swiperRef.current) {
-      swiperRef.current.update();
-    }
+    if (swiperRef.current) swiperRef.current.update();
   }, [searchBar]);
 
   return (
@@ -81,7 +100,7 @@ function TrekGrid() {
             {searchBar.map((trek) => (
               <div className="swiper-slide" key={trek.id} >
                 <TrekCard
-                  image={trek.image}
+                  image={API + trek.image}
                   name={trek.name}
                   route={trek.route}
                   rating={trek.rating}
@@ -92,7 +111,9 @@ function TrekGrid() {
             ))}
           </div>
 
-          {searchBar.length === 0 && (
+          {loading && <p className="text-center py-10">Loading...</p>}
+          {error && <p className="text-center py-10">Something went wrong: {error}</p>}
+          {!loading && !error && searchBar.length === 0 && (
             <div className="w-full text-center py-10 text-[18px] text-gray-500">
               No trails found matching your search.
             </div>
