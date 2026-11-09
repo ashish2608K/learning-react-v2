@@ -1,7 +1,7 @@
 import { useState } from "react";
-import heartImg from "./images/icons/heart.png";
-import starImg from "./images/icons/star.png";
-import trekImg from "./images/icons/trek.png";
+import heartImg from "../himalayas_treks_db/public/images/icons/heart.png";
+import starImg from "../himalayas_treks_db/public/images/icons/star.png";
+import trekImg from "../himalayas_treks_db/public/images/icons/trek.png";
 
 function TrekCard({ image, name, route, rating, level, distance }) {
   const [liked, setLiked] = useState(false);

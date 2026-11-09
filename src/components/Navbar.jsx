@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../css/index.css";
-import LogoIcon from "../images/icons/trek.png";
+import LogoIcon from "../../himalayas_treks_db/public/images/icons/trek.png";
 
 const leftLinks = ["Home", "Treks", "Destinations"];
 const rightLinks = ["Blog", "About", "Search"];
