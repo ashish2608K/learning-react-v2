@@ -25,10 +25,10 @@ app.get("/api/treks", async (req, res) => {
     }
 });
 
-api.get("api/seasons", async (req, res) => {
+app.get("/api/seasons", async (req, res) => {
     try {
-        const [rows] = await db.query("SELECT * FROM seasons;")
-        res.json = (rows)
+        const [rows] = await db.query("SELECT * FROM seasons")
+        res.json(rows)
     }
     catch (err) {
         console.error(err)
