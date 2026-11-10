@@ -25,4 +25,15 @@ app.get("/api/treks", async (req, res) => {
     }
 });
 
-app.listen(5000, () => console.log("API http://localhost:5000"))                               
+api.get("api/seasons", async (req, res) => {
+    try {
+        const [rows] = await db.query("SELECT * FROM seasons;")
+        res.json = (rows)
+    }
+    catch (err) {
+        console.error(err)
+        res.status(500).json({ message: "DATABASE ERROR" })
+    }
+})
+
+app.listen(5000, () => console.log("API http://localhost:5000"))            
