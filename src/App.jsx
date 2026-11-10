@@ -2,6 +2,7 @@ import TrekGrid from "./TrekGrid.jsx";
 import Hero from "./components/Banner.jsx";
 import Navbar from "./components/Navbar";
 import SeasonsTreks from "./components/SeasonsTreks.jsx";
+import PlanTrek from "./components/PlanTrek.jsx";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <TrekGrid />
       <SeasonsTreks />
+      <PlanTrek />
     </div>
   );
 }
