@@ -1,41 +1,51 @@
-import { useState } from "react";
+
 import "../css/index.css";
 import LogoIcon from "../../himalayas_treks_db/public/images/icons/trek.png";
+import { NavLink, Link } from "react-router-dom";
 
-const leftLinks = ["Home", "Treks", "Destinations"];
-const rightLinks = ["Blog", "About", "Search"];
+const leftLinks = [
+    { label: "Home", path: "/" },
+    { label: "Treks", path: "/treks" },
+    { label: "Destinations", path: "/destinations" },
+];
+
+const rightLinks = [
+    { label: "Blog", path: "/blog" },
+    { label: "About", path: "/about" },
+    { label: "Search", path: "/search" },
+];
 
 function Navbar() {
-    const [active, setActive] = useState("Home");
 
-    const renderLink = (label) => (
-        <a
+    const renderLink = ({ label, path }) => (
+        <NavLink
             key={label}
-            href="#"
-            className={`navbar_link ${active === label ? "active" : ""}`}
-            onClick={(e) => {
-                e.preventDefault();
-                setActive(label);
-            }}
+            to={path}
+            end={path === "/"}
+            className={({ isActive }) =>
+                `navbar_link ${isActive ? "active" : ""}`
+            }
         >
             {label}
-        </a>
+        </NavLink>
     );
 
     return (
         <nav className="site_navbar">
+
             <div className="navbar_group navbar_left">
                 {leftLinks.map(renderLink)}
             </div>
 
-            <a href="#" className="navbar_logo">
+            <Link to="/" className="navbar_logo">
                 <img src={LogoIcon} alt="Himalayan Trails" />
                 <span>Himalayan Trails</span>
-            </a>
+            </Link>
 
             <div className="navbar_group navbar_right">
                 {rightLinks.map(renderLink)}
             </div>
+
         </nav>
     );
 }
