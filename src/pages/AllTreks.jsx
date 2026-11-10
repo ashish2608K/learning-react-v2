@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function AllTreks() {
+function AllTreks() {
   return (
     <div>
       I LOVE YOU KOMAL
     </div>
   )
 }
+
+export default AllTreks;

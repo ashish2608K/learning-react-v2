@@ -6,13 +6,11 @@ import { NavLink, Link } from "react-router-dom";
 const leftLinks = [
     { label: "Home", path: "/" },
     { label: "Treks", path: "/treks" },
-    { label: "Destinations", path: "/destinations" },
 ];
 
 const rightLinks = [
-    { label: "Blog", path: "/blog" },
     { label: "About", path: "/about" },
-    { label: "Search", path: "/search" },
+    { label: "Login", path: "/loginx" },
 ];
 
 function Navbar() {
